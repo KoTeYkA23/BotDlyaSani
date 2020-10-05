@@ -29,30 +29,31 @@ def main():
    for event in longpoll.listen():
     if not freeze_all:
      if event.type == VkBotEventType.MESSAGE_NEW and event.from_chat:
+      if ("ладно бот, сорян" in event.message.text.lower()) and shut:
+            print("unshuted")
+            shut = False
+            vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "ок)))))")
+      if not shut:
         global last_chat_id
         last_chat_id = int(event.chat_id)
-        if "сделал" in event.message.text.lower() and not shut:
+        if "сделал" in event.message.text.lower():
             print("triggered")
             vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "", attachment= 'doc-198994748_567189800')
-        elif "диздок" in event.message.text.lower() and not shut:
+        elif "диздок" in event.message.text.lower():
             print("triggered")
             rand = random.randint(0, 1)
             if rand == 0:
                 vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "", attachment= 'video284312829_456239300')
             elif rand == 1:
                 vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "", attachment= 'video330075926_456239560')
-        elif (("блять " in event.message.text.lower()) or ("бля " in event.message.text.lower()) or ("пизда " in event.message.text.lower()) or ("нахуй " in event.message.text.lower()) or ("хуй " in event.message.text.lower()) or ("пиздец " in event.message.text.lower()) or ("ахуеть " in event.message.text.lower()) or ("хуесос " in event.message.text.lower()) or ("еблан " in event.message.text.lower()) or (event.message.text.lower() == "бля") or (event.message.text.lower() == "блять") or (event.message.text.lower() == "пизда") or (event.message.text.lower() == "нахуй") or (event.message.text.lower() == "хуй") or (event.message.text.lower() == "пиздец") or (event.message.text.lower() == "ахуеть") or (event.message.text.lower() == "хуесос") or (event.message.text.lower() == "еблан")) and not shut:
+        elif ("блять" in event.message.text.lower()) or ("бля" in event.message.text.lower()) or ("пизда" in event.message.text.lower()) or ("нахуй" in event.message.text.lower()) or ("хуй" in event.message.text.lower()) or ("пиздец" in event.message.text.lower()) or ("ахуеть" in event.message.text.lower()) or ("хуесос" in event.message.text.lower()) or ("еблан" in event.message.text.lower()):
             print("где-то в мире Маринка злится")
             vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "", attachment= 'photo-198994748_457239019')
-        elif "бот, заткнись" in event.message.text.lower() and not shut: 
+        elif "бот, заткнись" in event.message.text.lower(): 
             print("shuted")
             shut = True
             vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "ок(((")
-        elif "ладно бот, сорян" in event.message.text.lower()  and shut:
-            print("unshuted")
-            shut = False
-            vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "ок)))))")
-        elif not shut:
+        else:
             if (event.message.text.lower() == "кокорин") or (event.message.text.lower() == "мамаев") or (event.message.text.lower() == "негр") or (event.message.text.lower() == "андрей"):
                 print("called Кокорин")
                 vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "@kokorinandrey (Кокорин), тебя вызывают")
