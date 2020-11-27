@@ -1,4 +1,4 @@
-main_token = ''
+main_token = '5d2058709a1651808fa481020fb5dbbfd7b7abd2ec92731aee845734a451acfd15e0f801d64919d14b93e'
 
 max_try_until_freeze = 2
 freeze_waiting = 300
@@ -69,9 +69,9 @@ def main():
             elif (event.message.text.lower() == "салат") or (event.message.text.lower() == "салават") or (event.message.text.lower() == "дотер") or (event.message.text.lower() == "асламалекул"):
                 print("called Салат")
                 vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "@rayofhope_tso (Цезарь), вас вызывают")
-            elif (event.message.text.lower() == "александр") or (event.message.text.lower() == "саня") or (event.message.text.lower() == "главный") or (event.message.text.lower() == "хипосфера") or (event.message.text.lower() == "гипносфера"):
+            elif (event.message.text.lower() == "александр") or (event.message.text.lower() == "саня") or (event.message.text.lower() == "главный") or (event.message.text.lower() == "хипосфера") or (event.message.text.lower() == "гипносфера") or (event.message.text.lower() == "чорт") or (event.message.text.lower() == "чёрт") or ("черт" in event.message.text.lower()):
                 print("called Саня")
-                vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "@id182254808 (Главный), вас снова вызывает эта чернь")
+                vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "@id182254808 (ТЫ ЧЁРТ), СЮДА БЫСТРО!!!111")
             elif (event.message.text.lower() == "динарка") or (event.message.text.lower() == "динар") or (event.message.text.lower() == "динара") or (event.message.text.lower() == "динар очка") or (event.message.text.lower() == "обнимашка") or (event.message.text.lower() == "кошмар"):
                 print("called Динара")
                 vk.messages.send(random_id=round(random.random() * 10 ** 9), chat_id=int(event.chat_id), message = "@toxic.nightmare (Динара), тебя вызывают")
